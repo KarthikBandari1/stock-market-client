@@ -1,0 +1,37 @@
+.stock-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.stock-card {
+  flex: 0 1 48%;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stock-card:hover {
+  transform: scale(1.05);
+}
+
+.stock-symbol {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.stock-price {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #666;
+}
+
+.stock-chart {
+  margin-top: 15px;
+}

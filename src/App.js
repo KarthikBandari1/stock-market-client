@@ -1,22 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import io from "socket.io-client";
+import StockItem from "./components/StockItem";
+import "./App.css";
+
+const socket = io("http://localhost:5000");
 
 function App() {
+  const [stockData, setStockData] = useState([]);
+
+  useEffect(() => {
+    socket.on("stockData", (data) => {
+      setStockData(data);
+    });
+
+    return () => {
+      socket.off("stockData");
+    };
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Stock Market App</h1>
+        {stockData.map((stock) => (
+          <StockItem key={stock.symbol} stock={stock} />
+        ))}
       </header>
     </div>
   );
