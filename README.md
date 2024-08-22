@@ -32,9 +32,36 @@ git clone https://github.com/your-username/your-repo.git
 cd your-repo
 ```
 
+### 2. Install Dependencies
+
+#### Frontend
+
+Navigate to the `client` directory and install the required dependencies:
+
+````bash
+cd client
+npm install
+
+### 3. Set Up Environment Variables
+
+Create a `.env` file in the `server` directory with the following content:
+
+```env
+ALPHA_VANTAGE_API_KEY=your_alpha_vantage_api_key
+
+### 4. Run the Application
+
+#### Start the Backend Server
+
+Navigate to the `server` directory and start the backend server:
+
+```bash
+cd server
+npm start
+
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -72,3 +99,4 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+````
