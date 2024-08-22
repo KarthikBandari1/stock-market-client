@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import StockItem from "./components/StockItem";
 import "./App.css";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://stockmarket-backend-1.onrender.com/");
 
 function App() {
   const [stockData, setStockData] = useState([]);
